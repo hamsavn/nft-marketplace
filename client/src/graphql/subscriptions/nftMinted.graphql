@@ -1,0 +1,6 @@
+subscription NftMinted {
+  nftMinted {
+    nftMinted
+    nftId
+  }
+}

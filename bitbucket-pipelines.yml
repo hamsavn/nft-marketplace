@@ -1,0 +1,44 @@
+image: node:16.14.0
+
+definitions:
+  caches:
+    client: client/node_modules
+    server: server/node_modules
+    contracts: contracts/node_modules
+  steps:
+    - step: &will-build
+        caches:
+          - client
+          - server
+          - contracts
+        name: Formatting and build
+        script:
+          - cd server
+          - npm install --prod=false --legacy-peer-deps
+          - npm run lint-check
+          - npm run build
+          - cd ../client
+          - npm install --prod=false --legacy-peer-deps
+          - npm run lint-check
+          - npm run build
+          - cd ../contracts
+          - npm install --prod=false --legacy-peer-deps
+          - npm run lint-check
+
+pipelines:
+  default:
+    - step: *will-build
+
+  branches:
+    develop:
+      - step: *will-build
+      - step:
+          name: Deploy to staging
+          deployment: Staging
+          script:
+            - echo "Deploying to staging"
+            - pipe: atlassian/ssh-run:0.2.2
+              variables:
+                SSH_USER: 'app'
+                SERVER: '188.166.247.168'
+                COMMAND: '/home/app/nft-marketplace/deploy.sh'

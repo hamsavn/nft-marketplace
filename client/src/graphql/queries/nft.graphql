@@ -1,0 +1,21 @@
+query GetNfts($params: NftQueryParams!) {
+  nft(input: $params) {
+    total
+    items {
+      id
+      title
+      fileURL
+      price
+      mediaHeight
+      mediaWidth
+      creator {
+        profileImage
+        address
+      }
+      owner {
+        profileImage
+        address
+      }
+    }
+  }
+}

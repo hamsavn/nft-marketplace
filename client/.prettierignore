@@ -1,0 +1,10 @@
+.next
+dist
+package.json
+node_modules
+build
+coverage
+.sewing-kit
+*.svg
+assets
+graphql.tsx

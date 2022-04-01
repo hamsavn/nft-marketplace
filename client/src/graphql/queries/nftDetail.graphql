@@ -1,0 +1,41 @@
+query NftDetail($id: String!) {
+  nftDetail(id: $id) {
+    id
+    tokenURI
+    title
+    description
+    fileURL
+    status
+    mediaHeight
+    mediaWidth
+    creator {
+      address
+      createdAt
+      email
+      bio
+      socialLink
+      userName
+      profileImage
+      profileBanner
+      twitterName
+      instaName
+    }
+    owner {
+      address
+      userName
+      profileImage
+      createdAt
+    }
+    price
+    tokenId
+    tradingHistory {
+      id
+      event
+      price
+      from
+      to
+      createdAt
+      nftId
+    }
+  }
+}

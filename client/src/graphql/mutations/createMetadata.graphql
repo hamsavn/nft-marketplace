@@ -1,0 +1,3 @@
+mutation CreateMetadata($input: CreateMetadataInput!) {
+  createMetadata(input: $input)
+}

@@ -1,0 +1,3 @@
+query GetNonce($address: String!) {
+  getNonce(address: $address)
+}

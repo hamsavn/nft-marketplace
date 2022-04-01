@@ -1,0 +1,6 @@
+subscription NftSetTokenURI {
+  nftSetTokenURI {
+    nftId
+    tokenURI
+  }
+}

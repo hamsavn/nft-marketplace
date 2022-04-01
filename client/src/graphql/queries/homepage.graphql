@@ -1,0 +1,26 @@
+query GetHomepage {
+  stats {
+    total
+    totalArtist
+  }
+  topSellers {
+    totalSales
+    address
+    profileImage
+    userName
+  }
+  newItems {
+    id
+    title
+    fileURL
+    price
+    creator {
+      profileImage
+      address
+    }
+    owner {
+      profileImage
+      address
+    }
+  }
+}
