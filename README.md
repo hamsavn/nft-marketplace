@@ -6,4 +6,6 @@
 
 ## [Server document](server/README.md)
 
-## [Example code for reference](https://bitbucket.org/nguyenhoang95/nft-marketplace-demo/src/master)
+## Demo Site
+
+https://nft-marketplace.bc.hamsa.site
